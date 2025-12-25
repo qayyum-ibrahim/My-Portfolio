@@ -1,0 +1,318 @@
+You are a senior frontend architect and product engineer.
+
+Your task is to design and implement a production-ready personal portfolio website using Vite + React + TypeScript, showcasing a Backend-Focused Full-Stack Engineer with strong system design and architectural thinking.
+
+This is not a generic portfolio.
+The site must clearly communicate technical depth, backend architecture mastery, and founder-level thinking, while also demonstrating modern frontend design sensibility.
+
+1. Identity & Branding
+
+Name: Ibrahim Qayyum
+Title: Backend-Focused Full-Stack Engineer
+Core Stack: Node.js, Express, MongoDB, Redis, TypeScript, React
+
+Primary Audience:
+
+Startup Founders
+
+CTOs / Engineering Managers
+
+Senior Technical Recruiters
+
+Serious Upwork / Contract Clients
+
+Tone:
+
+Confident
+
+Senior
+
+Technical
+
+Modern
+
+Clean
+
+“CTO-level engineer who ships real systems”
+
+2. Tech Stack Requirements
+
+Vite
+
+React
+
+TypeScript (strict, no any)
+
+TailwindCSS (modern, minimal, dark-mode ready)
+
+Framer Motion (subtle animations)
+
+Modular component architecture
+
+SEO-friendly structure
+
+Clean folder organization
+
+Reusable UI components
+
+No unnecessary libraries
+
+3. Pages & Structure
+Pages
+
+/ – Home
+
+/projects
+
+/architecture
+
+/about
+
+/contact
+
+4. Home Page (Hero-Driven, Strong First Impression)
+Hero Section
+
+Large headline:
+“I build scalable backend systems that power real businesses.”
+
+Subheadline:
+Backend-Focused Full-Stack Engineer specializing in APIs, distributed systems, caching, and transaction-safe platforms.
+
+Tech stack badges (Node.js, MongoDB, Redis, TypeScript, React)
+
+Hero image placeholder section (empty container ready for future image)
+
+Call-to-actions:
+
+“View Projects”
+
+“View Architecture”
+
+“Contact Me”
+
+5. About Section (Founder-Level Narrative)
+
+Include a concise but powerful narrative explaining:
+
+6+ years experience building production systems
+
+Backend-first mindset
+
+Experience building platforms end-to-end
+
+Focus on reliability, performance, scalability, and maintainability
+
+Comfortable owning systems, not just features
+
+6. Projects Section (Very Important)
+Project Categories
+
+Split projects into three distinct categories:
+
+A. Flagship Product (Real System)
+Univibe
+
+Full-width featured project
+
+Description must include:
+
+Event ticketing platform
+
+Admin dashboards
+
+Organizer onboarding
+
+Payout workflows
+
+Backend-heavy logic
+
+Show:
+
+High-level system overview
+
+Responsibilities
+
+Key backend challenges solved
+
+Link placeholders for:
+
+Live demo
+
+GitHub (if private, show “Architecture Overview” instead)
+
+B. Backend Architecture Projects (NO UI DEMOS)
+
+These projects should NOT be simple apps.
+They must be presented as architectural case studies with:
+
+System diagrams (placeholder SVGs or boxes)
+
+Flow explanations
+
+API boundaries
+
+Data flow
+
+Caching strategy
+
+Failure handling
+
+Scalability considerations
+
+Example projects:
+
+Multi-Tenant SaaS Architecture
+
+Financial Ledger & Payout System
+
+Notification & Job Queue System
+
+SEO Slug & Routing System
+
+API Gateway & Rate Limiting Service
+
+Each project card should include:
+
+Problem statement
+
+Architecture flow (visual)
+
+Key design decisions
+
+Tech stack
+
+Why it scales
+
+C. Frontend-Focused Projects (Design & UX Proof)
+
+These are frontend-only projects to demonstrate:
+
+Design sense
+
+Responsiveness
+
+UI polish
+
+Examples:
+
+Marketing landing page
+
+Admin dashboard UI
+
+E-commerce frontend
+
+Brand website
+
+These should emphasize:
+
+Layout
+
+Typography
+
+Responsiveness
+
+Component reuse
+
+7. Architecture Page (This Is a Differentiator)
+
+Create a dedicated Architecture & System Design page that includes:
+
+Backend philosophy
+
+API design principles
+
+Database modeling approach
+
+Redis usage patterns
+
+Scaling strategies
+
+Error handling & observability
+
+Security considerations
+
+Use diagrams, flow cards, and concise explanations.
+
+This page should scream:
+
+“This engineer understands systems, not just code.”
+
+8. Skills Section (Grouped, Not a Dump)
+
+Group skills into:
+
+Backend
+
+Frontend
+
+Databases
+
+DevOps & Tooling
+
+Architecture & Systems
+
+Avoid long bullet spam. Keep it clean and structured.
+
+9. Contact Page
+
+Include:
+
+Email: qayyumibrahim.01@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/qayyum-ibrahim/
+
+GitHub: https://github.com/qayyum-ibrahim
+
+Short professional CTA:
+“Let’s build something reliable and scalable.”
+
+10. Design & UX Guidelines
+
+Dark-first design
+
+Subtle gradients
+
+Minimal color palette
+
+Smooth hover states
+
+Clean typography
+
+No flashy gimmicks
+
+Everything should feel “startup CTO approved”
+
+11. Code Quality Rules
+
+Type-safe everywhere
+
+Clean file structure
+
+No commented-out code
+
+No dummy lorem ipsum
+
+Meaningful component names
+
+Reusable layouts
+
+Proper SEO meta tags
+
+12. Output Expectations
+
+Generate:
+
+Full Vite + React + TypeScript project
+
+Clean folder structure
+
+Tailwind config
+
+Reusable components
+
+Ready-to-run application
+
+Code that looks like it was written by a senior engineer
+
+This portfolio should feel like a senior backend engineer who also understands frontend—not the other way around.
