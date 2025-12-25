@@ -80,7 +80,7 @@ _More projects can be found in my [repositories](https://github.com/qayyum-ibrah
 ## 📫 Connect with Me
 
 - LinkedIn: [linkedin.com/in/qayyum-ibrahim](https://linkedin.com/in/qayyum-ibrahim)
-- Portfolio: [qayyum-ibrahim.vercel.app](https://https://qayyum-ibrahim.vercel.app/)
+- Portfolio: [qayyum-ibrahim.vercel.app](https://qayyumibrahim.vercel.app/)
 - Email: [qayyumibrahim.01@gmail.com](mailto:qayyumibrahim.01@gmail.com)  
 ---
 
