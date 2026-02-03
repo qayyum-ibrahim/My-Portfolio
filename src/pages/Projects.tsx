@@ -19,7 +19,10 @@ import {
 import { useState } from "react";
 import univibe_1 from "@assets/generated_images/univibe_1.png";
 import univibe_2 from "@assets/generated_images/univibe_2.png";
-import univibe_3 from "@assets/generated_images/univibe_3.png";
+import plumbing_1 from "@assets/generated_images/plumbing_1.png";
+import plumbing_2 from "@assets/generated_images/plumbing_2.png";
+import dulwich_1 from "@assets/generated_images/dulwich_1.png";
+import dulwich_2 from "@assets/generated_images/dulwich_2.png";
 
 type Category = "all" | "flagship" | "architecture" | "frontend";
 
@@ -38,9 +41,50 @@ const projects = [
       "QR code generation and scanning system",
       "Role-based access control (RBAC)",
     ],
+    images: { hero: univibe_1, mobile: univibe_2 },
     links: {
       demo: "http://univibe.ng/",
       github: "https://github.com/qayyum-ibrahim/temp-univibe",
+    },
+  },
+  {
+    id: "dulwich-plumber",
+    title: "Dulwich Plumber",
+    category: "flagship",
+    description:
+      "A high-performance React landing page for a London-based plumbing firm, optimized for emergency service conversions and sub-second load times.",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    type: "Service Industry UI",
+    features: [
+      "One-tap emergency calling integration",
+      "Mobile-first 'clutter-free' architecture",
+      "Automated Gas Safe credential verification display",
+      "Dynamic service area SEO injection",
+    ],
+    images: { hero: dulwich_1, mobile: dulwich_2 },
+    links: {
+      demo: "https://dulwich-plumber.vercel.app/",
+      github: "#",
+    },
+  },
+  {
+    id: "mayfair-drainage",
+    title: "Mayfair Plumbing & Drainage",
+    category: "flagship",
+    description:
+      "A 'Quiet Luxury' digital presence designed for the W1 postcode. Focuses on premium branding, high-end aesthetics, and concierge-style lead capture.",
+    tech: ["TypeScript", "React", "Tailwind CSS", "Lucide"],
+    type: "Luxury Brand Experience",
+    features: [
+      "Premium 'Concierge' lead capture system",
+      "High-contrast luxury visual hierarchy",
+      "Advanced SEO for high-net-worth London postcodes",
+      "Performance-optimized image delivery",
+    ],
+    images: { hero: plumbing_1, mobile: plumbing_2 },
+    links: {
+      demo: "https://mayfair-plumbing.vercel.app/",
+      github: "#",
     },
   },
   {
@@ -104,7 +148,7 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
 
   const filteredProjects = projects.filter(
-    (p) => activeCategory === "all" || p.category === activeCategory
+    (p) => activeCategory === "all" || p.category === activeCategory,
   );
 
   return (
@@ -143,101 +187,107 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Featured Project (Univibe) - Only show if All or Flagship */}
+        {/* Featured Projects Section */}
         {(activeCategory === "all" || activeCategory === "flagship") && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-20"
-          >
-            <div className="border border-zinc-800 rounded-2xl bg-zinc-900/30 overflow-hidden relative group">
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="space-y-20 mb-20">
+            {projects
+              .filter((p) => p.category === "flagship")
+              .map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <div className="border border-zinc-800 rounded-2xl bg-zinc-900/30 overflow-hidden">
+                    {/* Subtle Glow Background */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-4 text-blue-400 font-mono text-xs uppercase tracking-wider">
-                    <Badge
-                      variant="outline"
-                      className="border-blue-500/30 text-blue-400"
-                    >
-                      Flagship Product
-                    </Badge>
-                    <span>Production System</span>
-                  </div>
-
-                  <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                    Univibe
-                  </h2>
-                  <p className="text-zinc-400 mb-6 leading-relaxed">
-                    A comprehensive event ticketing platform built to handle
-                    high-concurrency demands. Unlike simple CRUD apps, Univibe
-                    handles complex state management for seat reservations,
-                    payments, and real-time scanning.
-                  </p>
-
-                  <div className="space-y-3 mb-8">
-                    {projects[0].features?.map((feature, i) => (
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                      {/* Text Content - Swaps side every other project for visual flow */}
                       <div
-                        key={i}
-                        className="flex items-start gap-3 text-sm text-zinc-300"
+                        className={`p-8 md:p-12 flex flex-col justify-center ${index % 2 !== 0 ? "lg:order-last" : ""}`}
                       >
-                        <Shield className="w-5 h-5 text-emerald-500 shrink-0" />
-                        {feature}
+                        <div className="flex items-center gap-2 mb-4 text-blue-400 font-mono text-xs uppercase tracking-wider">
+                          <Badge
+                            variant="outline"
+                            className="border-blue-500/30 text-blue-400"
+                          >
+                            Flagship Project
+                          </Badge>
+                          <span>{project.type}</span>
+                        </div>
+
+                        <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                          {project.title}
+                        </h2>
+                        <p className="text-zinc-400 mb-6 leading-relaxed">
+                          {project.description}
+                        </p>
+
+                        <div className="space-y-3 mb-8">
+                          {project?.features?.map((feature, i) => (
+                            <div
+                              key={i}
+                              className="flex items-start gap-3 text-sm text-zinc-300"
+                            >
+                              <Shield className="w-5 h-5 text-emerald-500 shrink-0" />
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 mb-8">
+                          {project.tech.map((t) => (
+                            <span
+                              key={t}
+                              className="px-2 py-1 bg-zinc-950 border border-zinc-800 rounded text-xs text-zinc-400 font-mono"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex gap-4">
+                          <Button
+                            className="z-10 bg-white text-black hover:bg-zinc-200"
+                            onClick={() =>
+                              window.open(project.links.demo, "_blank")
+                            }
+                          >
+                            View Live Project{" "}
+                            <ExternalLink className="w-4 h-4 ml-2" />
+                          </Button>
+                        </div>
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {projects[0].tech.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2 py-1 bg-zinc-950 border border-zinc-800 rounded text-xs text-zinc-400 font-mono"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                      {/* Image Showcase Section */}
+                      <div className="bg-zinc-950 border-l border-zinc-800 min-h-[450px] flex items-center justify-center relative p-6 md:p-12">
+                        {/* Desktop Preview */}
+                        <div className="relative w-full aspect-video border border-zinc-800 bg-zinc-900/50 rounded-lg overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                          <img
+                            src={project?.images?.hero}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
 
-                  <div className="flex gap-4">
-                    <Button
-                      className="Z-10 bg-white text-black hover:bg-zinc-200"
-                      onClick={() =>
-                        window.open(projects[0].links.demo, "_blank")
-                      }
-                    >
-                      View Live Demo <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="Z-10 border-zinc-700 hover:bg-zinc-800"
-                    >
-                      System Architecture <Layers className="w-4 h-4 ml-2" />
-                    </Button>
+                        {/* Floating Mobile Preview (Shows on Hover or Tablet+) */}
+                        <div className="absolute -bottom-4 -right-4 md:right-8 w-[120px] md:w-40 aspect-9/19 border-4 border-zinc-900 bg-zinc-800 rounded-4xl overflow-hidden shadow-2xl hidden md:block">
+                          <img
+                            src={project?.images?.mobile}
+                            alt={`${project.title} mobile`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                <div className="bg-zinc-950 border-l border-zinc-800 min-h-[400px] flex items-center justify-center relative p-8">
-                  {/* Abstract Representation of the System */}
-                  <div className="relative w-full max-w-md aspect-video border border-zinc-800 bg-zinc-900/50 rounded-lg flex items-center justify-center">
-                    {/* <span className="text-zinc-600 font-mono text-sm">
-                      Product UI / Dashboard Preview
-                    </span> */}
-                    {/* Placeholder for actual screenshot */}
-
-                    <img
-                      onClick={() =>
-                        window.open(projects[0].links.demo, "_blank")
-                      }
-                      src={univibe_1}
-                      className="bg-zinc-800 rounded-sm cursor-pointer"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+                </motion.div>
+              ))}
+          </div>
         )}
-
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects
