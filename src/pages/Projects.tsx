@@ -7,22 +7,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import {
-  ExternalLink,
-  Github,
-  Layers,
-  Layout,
-  Server,
-  Shield,
-} from "lucide-react";
-import { useState } from "react";
-import univibe_1 from "@assets/generated_images/univibe_1.png";
-import univibe_2 from "@assets/generated_images/univibe_2.png";
-import plumbing_1 from "@assets/generated_images/plumbing_1.png";
-import plumbing_2 from "@assets/generated_images/plumbing_2.png";
 import dulwich_1 from "@assets/generated_images/dulwich_1.png";
 import dulwich_2 from "@assets/generated_images/dulwich_2.png";
+import plumbing_1 from "@assets/generated_images/plumbing_1.png";
+import plumbing_2 from "@assets/generated_images/plumbing_2.png";
+import univibe_1 from "@assets/generated_images/univibe_1.png";
+import univibe_2 from "@assets/generated_images/univibe_2.png";
+import apex_1 from "@assets/generated_images/apex_1.png";
+import apex_2 from "@assets/generated_images/apex_2.png";
+
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Layout, Server, Shield } from "lucide-react";
+import { useState } from "react";
 
 type Category = "all" | "flagship" | "architecture" | "frontend";
 
@@ -84,6 +80,29 @@ const projects = [
     images: { hero: plumbing_1, mobile: plumbing_2 },
     links: {
       demo: "https://mayfair-plumbing.vercel.app/",
+      github: "#",
+    },
+  },
+  {
+    id: "industrial-uk",
+    title: "Apex Scaffolding & Access",
+    category: "flagship",
+    description:
+      "A rugged, high-performance B2B site for an industrial scaffolding firm. Designed to project safety, compliance, and massive scale.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    type: "Industrial B2B",
+    features: [
+      "Interactive Safety & Compliance gallery",
+      "Rapid Quote system for site managers",
+      "Project map integration",
+      "Optimized for low-signal construction site mobile browsing",
+    ],
+    images: {
+      hero: apex_1,
+      mobile: apex_2,
+    },
+    links: {
+      demo: "https://apex-power-grid.vercel.app/",
       github: "#",
     },
   },
