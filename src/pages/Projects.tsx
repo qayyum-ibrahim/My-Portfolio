@@ -15,6 +15,8 @@ import univibe_1 from "@assets/generated_images/univibe_1.png";
 import univibe_2 from "@assets/generated_images/univibe_2.png";
 import apex_1 from "@assets/generated_images/apex_1.png";
 import apex_2 from "@assets/generated_images/apex_2.png";
+import barber_1 from "@assets/generated_images/barber_1.png";
+import barber_2 from "@assets/generated_images/barber_2.png";
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Layout, Server, Shield } from "lucide-react";
@@ -103,6 +105,26 @@ const projects = [
     },
     links: {
       demo: "https://apex-power-grid.vercel.app/",
+      github: "#",
+    },
+  },
+  {
+    id: "cutting-edge-barber",
+    title: "The Cutting Edge",
+    category: "flagship",
+    description:
+      "A 'Modern Heritage' digital experience for Sean Beck & Sides. Fusing high-end London grooming aesthetics with a seamless, conversion-focused booking interface.",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    type: "Lifestyle & Retail UI",
+    features: [
+      "Conversion-optimized 'Book Now' integration",
+      "Dynamic Masonry Gallery for portfolio display",
+      "Interactive minimalist service & pricing menu",
+      "Street-premium aesthetic with high-contrast UI",
+    ],
+    images: { hero: barber_1, mobile: barber_2 },
+    links: {
+      demo: "https://the-cutting-edge.vercel.app/",
       github: "#",
     },
   },
