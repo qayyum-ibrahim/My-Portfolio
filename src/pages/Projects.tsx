@@ -319,7 +319,7 @@ export default function Projects() {
                           <img
                             src={project?.images?.mobile}
                             alt={`${project.title} mobile`}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-fit"
                           />
                         </div>
                       </div>
