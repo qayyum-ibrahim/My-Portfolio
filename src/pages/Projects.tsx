@@ -17,6 +17,8 @@ import apex_1 from "@assets/generated_images/apex_1.png";
 import apex_2 from "@assets/generated_images/apex_2.png";
 import barber_1 from "@assets/generated_images/barber_1.png";
 import barber_2 from "@assets/generated_images/barber_2.png";
+import master_plumber_1 from "@assets/generated_images/master_plumber_1.png";
+import master_plumber_2 from "@assets/generated_images/master_plumber_2.png";
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Layout, Server, Shield } from "lucide-react";
@@ -25,6 +27,29 @@ import { useState } from "react";
 type Category = "all" | "flagship" | "architecture" | "frontend";
 
 const projects = [
+  {
+    id: "master-plumber-lusaka",
+    title: "Master Plumber",
+    category: "flagship",
+    description:
+      "A high-authority infrastructure and home pipework platform developed for the Lusaka market. Features a multi-page SEO architecture, localized lead capture, and a dynamic multi-media project gallery.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    type: "Infrastructure & Trade UI",
+    features: [
+      "Dynamic Service-to-Project filtering system",
+      "Localized SEO Schema for Zambian search rankings",
+      "Multi-media 'Project Collections' (Video/Image gallery)",
+      "Floating WhatsApp concierge for instant lead generation",
+    ],
+    images: {
+      hero: master_plumber_1,
+      mobile: master_plumber_2,
+    },
+    links: {
+      demo: "https://master-plumber.vercel.app/",
+      github: "#",
+    },
+  },
   {
     id: "univibe",
     title: "Univibe",
