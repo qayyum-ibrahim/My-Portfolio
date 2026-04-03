@@ -10,6 +10,7 @@ import Projects from "@/pages/Projects";
 import Architecture from "@/pages/Architecture";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <ScrollToTop />
         <Layout>
           <Router />
         </Layout>

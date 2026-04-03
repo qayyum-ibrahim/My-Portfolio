@@ -1,12 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import dulwich_1 from "@assets/generated_images/dulwich_1.png";
 import dulwich_2 from "@assets/generated_images/dulwich_2.png";
 import plumbing_1 from "@assets/generated_images/plumbing_1.png";
@@ -21,422 +14,222 @@ import master_plumber_1 from "@assets/generated_images/master_plumber_1.png";
 import master_plumber_2 from "@assets/generated_images/master_plumber_2.png";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Layout, Server, Shield } from "lucide-react";
-import { useState } from "react";
+import { ExternalLink, CheckCircle2 } from "lucide-react";
 
-type Category = "all" | "flagship" | "architecture" | "frontend";
+interface Project {
+  id: string;
+  title: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  tech: string[];
+  images: { hero: string; mobile: string };
+  link: string;
+  tags: string[];
+}
 
-const projects = [
-  {
-    id: "master-plumber-lusaka",
-    title: "Master Plumber",
-    category: "flagship",
-    description:
-      "A high-authority infrastructure and home pipework platform developed for the Lusaka market. Features a multi-page SEO architecture, localized lead capture, and a dynamic multi-media project gallery.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    type: "Infrastructure & Trade UI",
-    features: [
-      "Dynamic Service-to-Project filtering system",
-      "Localized SEO Schema for Zambian search rankings",
-      "Multi-media 'Project Collections' (Video/Image gallery)",
-      "Floating WhatsApp concierge for instant lead generation",
-    ],
-    images: {
-      hero: master_plumber_1,
-      mobile: master_plumber_2,
-    },
-    links: {
-      demo: "https://master-plumber.vercel.app/",
-      github: "#",
-    },
-  },
+const projects: Project[] = [
   {
     id: "univibe",
     title: "Univibe",
-    category: "flagship",
-    description:
-      "A comprehensive event ticketing and management platform designed for high-concurrency ticket sales.",
-    tech: ["Node.js", "Express", "MongoDB", "Redis", "BullMQ", "React"],
-    type: "Full-Stack System",
-    features: [
-      "Real-time seat reservation with Redis locking",
-      "Automated payout workflows for organizers",
-      "QR code generation and scanning system",
-      "Role-based access control (RBAC)",
-    ],
+    problem:
+      "Event organizers needed a reliable ticketing platform that could handle concurrent purchases without double-booking seats.",
+    solution:
+      "Built a full-stack event ticketing system with real-time seat locking, automated organizer payouts, QR-based check-in, and role-based admin dashboards.",
+    impact:
+      "Processed 1000+ tickets with zero double-bookings. Reduced manual payout processing time by 70%.",
+    tech: ["Node.js", "Express", "MongoDB", "Redis", "React"],
     images: { hero: univibe_1, mobile: univibe_2 },
-    links: {
-      demo: "http://univibe.ng/",
-      github: "https://github.com/qayyum-ibrahim/temp-univibe",
-    },
+    link: "http://univibe.ng/",
+    tags: ["Web App", "Payments", "Real-Time"],
+  },
+  {
+    id: "master-plumber",
+    title: "Master Plumber",
+    problem:
+      "A Lusaka-based plumbing company relied entirely on word-of-mouth with no digital presence.",
+    solution:
+      "Designed and built a multi-page SEO-optimized website with lead capture forms, a project gallery, and WhatsApp integration for instant enquiries.",
+    impact:
+      "Established professional online presence. Increased inbound enquiries through local search visibility.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    images: { hero: master_plumber_1, mobile: master_plumber_2 },
+    link: "https://master-plumber.vercel.app/",
+    tags: ["Business Website", "SEO", "Lead Generation"],
   },
   {
     id: "dulwich-plumber",
     title: "Dulwich Plumber",
-    category: "flagship",
-    description:
-      "A high-performance React landing page for a London-based plumbing firm, optimized for emergency service conversions and sub-second load times.",
+    problem:
+      "A London plumber needed a website that converts emergency callers into booked jobs, fast.",
+    solution:
+      "Built a mobile-first landing page with one-tap emergency calling, Gas Safe credential display, and service area targeting.",
+    impact:
+      "Sub-second load times. Streamlined UX optimized for high-intent emergency conversions.",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    type: "Service Industry UI",
-    features: [
-      "One-tap emergency calling integration",
-      "Mobile-first 'clutter-free' architecture",
-      "Automated Gas Safe credential verification display",
-      "Dynamic service area SEO injection",
-    ],
     images: { hero: dulwich_1, mobile: dulwich_2 },
-    links: {
-      demo: "https://dulwich-plumber.vercel.app/",
-      github: "#",
-    },
+    link: "https://dulwich-plumber.vercel.app/",
+    tags: ["Landing Page", "Conversion", "Mobile-First"],
   },
   {
     id: "mayfair-drainage",
     title: "Mayfair Plumbing & Drainage",
-    category: "flagship",
-    description:
-      "A 'Quiet Luxury' digital presence designed for the W1 postcode. Focuses on premium branding, high-end aesthetics, and concierge-style lead capture.",
-    tech: ["TypeScript", "React", "Tailwind CSS", "Lucide"],
-    type: "Luxury Brand Experience",
-    features: [
-      "Premium 'Concierge' lead capture system",
-      "High-contrast luxury visual hierarchy",
-      "Advanced SEO for high-net-worth London postcodes",
-      "Performance-optimized image delivery",
-    ],
+    problem:
+      "A premium London plumbing firm needed a website that reflected their luxury positioning in the W1 postcode.",
+    solution:
+      "Crafted a 'quiet luxury' web experience with premium branding, concierge-style lead capture, and SEO targeting high-net-worth postcodes.",
+    impact:
+      "Elevated brand perception. Positioned the business to attract higher-value clients in premium London areas.",
+    tech: ["TypeScript", "React", "Tailwind CSS"],
     images: { hero: plumbing_1, mobile: plumbing_2 },
-    links: {
-      demo: "https://mayfair-plumbing.vercel.app/",
-      github: "#",
-    },
+    link: "https://mayfair-plumbing.vercel.app/",
+    tags: ["Brand Website", "Luxury", "SEO"],
   },
   {
-    id: "industrial-uk",
+    id: "apex-scaffolding",
     title: "Apex Scaffolding & Access",
-    category: "flagship",
-    description:
-      "A rugged, high-performance B2B site for an industrial scaffolding firm. Designed to project safety, compliance, and massive scale.",
+    problem:
+      "An industrial scaffolding company needed a B2B web presence that communicates safety, scale, and compliance.",
+    solution:
+      "Built a rugged, performance-optimized B2B site with a rapid quote system, safety compliance gallery, and project map integration.",
+    impact:
+      "Enabled online lead capture for site managers. Optimized for low-signal mobile browsing on construction sites.",
     tech: ["React", "Tailwind CSS", "Framer Motion"],
-    type: "Industrial B2B",
-    features: [
-      "Interactive Safety & Compliance gallery",
-      "Rapid Quote system for site managers",
-      "Project map integration",
-      "Optimized for low-signal construction site mobile browsing",
-    ],
-    images: {
-      hero: apex_1,
-      mobile: apex_2,
-    },
-    links: {
-      demo: "https://apex-power-grid.vercel.app/",
-      github: "#",
-    },
+    images: { hero: apex_1, mobile: apex_2 },
+    link: "https://apex-power-grid.vercel.app/",
+    tags: ["B2B", "Industrial", "Lead Gen"],
   },
   {
-    id: "cutting-edge-barber",
+    id: "cutting-edge",
     title: "The Cutting Edge",
-    category: "flagship",
-    description:
-      "A 'Modern Heritage' digital experience for Sean Beck & Sides. Fusing high-end London grooming aesthetics with a seamless, conversion-focused booking interface.",
+    problem:
+      "A premium London barbershop wanted a digital presence that matched their street-premium brand identity.",
+    solution:
+      "Created a modern heritage web experience with conversion-optimized booking integration, masonry portfolio gallery, and interactive service menu.",
+    impact:
+      "Streamlined online bookings. Elevated brand identity with a cohesive digital experience.",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    type: "Lifestyle & Retail UI",
-    features: [
-      "Conversion-optimized 'Book Now' integration",
-      "Dynamic Masonry Gallery for portfolio display",
-      "Interactive minimalist service & pricing menu",
-      "Street-premium aesthetic with high-contrast UI",
-    ],
     images: { hero: barber_1, mobile: barber_2 },
-    links: {
-      demo: "https://the-cutting-edge.vercel.app/",
-      github: "#",
-    },
-  },
-  {
-    id: "saas-arch",
-    title: "Multi-Tenant SaaS Architecture",
-    category: "architecture",
-    description:
-      "Database-per-tenant isolation strategy implementation for a B2B platform.",
-    tech: ["PostgreSQL", "Docker", "Nginx", "Node.js"],
-    type: "System Design",
-    details:
-      "Implemented strict data isolation using row-level security and separate schemas. Designed the onboarding flow that automatically provisions resources.",
-    links: { github: "#" },
-  },
-  {
-    id: "payment-ledger",
-    title: "Double-Entry Ledger System",
-    category: "architecture",
-    description: "Immutable financial transaction system for a fintech MVP.",
-    tech: ["TypeScript", "SQL", "Acid Transactions"],
-    type: "Backend Core",
-    details:
-      "Designed a ledger system that guarantees zero-sum balance across all accounts, handling race conditions during high-volume transfers.",
-    links: { github: "#" },
-  },
-  {
-    id: "job-queue",
-    title: "Distributed Job Queue Service",
-    category: "architecture",
-    description:
-      "Scalable background processing system for image resizing and email notifications.",
-    tech: ["Redis", "BullMQ", "Kubernetes"],
-    type: "Infrastructure",
-    details:
-      "Decoupled heavy processing from the main API, improving response times by 80%. Implemented exponential backoff for failed jobs.",
-    links: { github: "#" },
-  },
-  {
-    id: "dashboard-ui",
-    title: "Analytics Dashboard",
-    category: "frontend",
-    description:
-      "High-performance analytics dashboard with real-time data visualization.",
-    tech: ["React", "D3.js", "TailwindCSS"],
-    type: "Frontend Interface",
-    links: { demo: "#", github: "#" },
-  },
-  {
-    id: "marketing-site",
-    title: "SaaS Landing Page",
-    category: "frontend",
-    description:
-      "Conversion-optimized landing page with smooth Framer Motion animations.",
-    tech: ["Astro", "React", "Framer Motion"],
-    type: "Marketing Site",
-    links: { demo: "#" },
+    link: "https://the-cutting-edge.vercel.app/",
+    tags: ["Lifestyle", "Bookings", "Branding"],
   },
 ];
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
-
-  const filteredProjects = projects.filter(
-    (p) => activeCategory === "all" || p.category === activeCategory,
-  );
-
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-6">
-        <div className="mb-12">
+        <div className="mb-16 max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Selected Projects
+            My Work
           </h1>
-          <p className="text-zinc-400 max-w-2xl">
-            A collection of systems, architectures, and interfaces I've built.
-            Ranging from high-scale backend services to polished user
-            interfaces.
+          <p className="text-muted-foreground text-lg">
+            Every project starts with a business problem. Here's how I've helped
+            clients build solutions that deliver real results.
           </p>
         </div>
 
-        {/* Custom Tabs */}
-        <div className="flex flex-wrap gap-2 mb-12 border-b border-zinc-800 pb-4">
-          {[
-            { id: "all", label: "All Work" },
-            { id: "flagship", label: "Flagship" },
-            { id: "architecture", label: "Backend Systems" },
-            { id: "frontend", label: "Frontend" },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveCategory(tab.id as Category)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
-                activeCategory === tab.id
-                  ? "bg-white text-black"
-                  : "text-zinc-400 hover:text-white hover:bg-zinc-900"
-              }`}
+        <div className="space-y-20">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="border border-border rounded-2xl bg-card/20 overflow-hidden hover:border-muted-foreground/20 transition-colors group"
             >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Featured Projects Section */}
-        {(activeCategory === "all" || activeCategory === "flagship") && (
-          <div className="space-y-20 mb-20">
-            {projects
-              .filter((p) => p.category === "flagship")
-              .map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="relative group"
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div
+                  className={`p-8 md:p-12 flex flex-col justify-center ${index % 2 !== 0 ? "lg:order-last" : ""}`}
                 >
-                  <div className="border border-zinc-800 rounded-2xl bg-zinc-900/30 overflow-hidden">
-                    {/* Subtle Glow Background */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                      {/* Text Content - Swaps side every other project for visual flow */}
-                      <div
-                        className={`p-8 md:p-12 flex flex-col justify-center ${index % 2 !== 0 ? "lg:order-last" : ""}`}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="border-border text-muted-foreground text-xs"
                       >
-                        <div className="flex items-center gap-2 mb-4 text-blue-400 font-mono text-xs uppercase tracking-wider">
-                          <Badge
-                            variant="outline"
-                            className="border-blue-500/30 text-blue-400"
-                          >
-                            Flagship Project
-                          </Badge>
-                          <span>{project.type}</span>
-                        </div>
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
 
-                        <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                          {project.title}
-                        </h2>
-                        <p className="text-zinc-400 mb-6 leading-relaxed">
-                          {project.description}
-                        </p>
+                  <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                    {project.title}
+                  </h2>
 
-                        <div className="space-y-3 mb-8">
-                          {project?.features?.map((feature, i) => (
-                            <div
-                              key={i}
-                              className="flex items-start gap-3 text-sm text-zinc-300"
-                            >
-                              <Shield className="w-5 h-5 text-emerald-500 shrink-0" />
-                              {feature}
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mb-8">
-                          {project.tech.map((t) => (
-                            <span
-                              key={t}
-                              className="px-2 py-1 bg-zinc-950 border border-zinc-800 rounded text-xs text-zinc-400 font-mono"
-                            >
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="flex gap-4">
-                          <Button
-                            className="z-10 bg-white text-black hover:bg-zinc-200"
-                            onClick={() =>
-                              window.open(project.links.demo, "_blank")
-                            }
-                          >
-                            View Live Project{" "}
-                            <ExternalLink className="w-4 h-4 ml-2" />
-                          </Button>
-                        </div>
-                      </div>
-
-                      {/* Image Showcase Section */}
-                      <div className="bg-zinc-950 border-l border-zinc-800 min-h-[450px] flex items-center justify-center relative p-6 md:p-12">
-                        {/* Desktop Preview */}
-                        <div className="relative w-full aspect-video border border-zinc-800 bg-zinc-900/50 rounded-lg overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                          <img
-                            src={project?.images?.hero}
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-
-                        {/* Floating Mobile Preview (Shows on Hover or Tablet+) */}
-                        <div className="absolute -bottom-4 -right-4 md:right-8 w-[120px] md:w-40 aspect-9/19 border-4 border-zinc-900 bg-zinc-800 rounded-4xl overflow-hidden shadow-2xl hidden md:block">
-                          <img
-                            src={project?.images?.mobile}
-                            alt={`${project.title} mobile`}
-                            className="w-full h-full object-fit"
-                          />
-                        </div>
-                      </div>
+                  <div className="space-y-4 mb-8">
+                    <ProjectDetail label="The Problem" text={project.problem} />
+                    <ProjectDetail
+                      label="What I Built"
+                      text={project.solution}
+                    />
+                    <div>
+                      <span className="text-xs font-mono uppercase tracking-wider text-primary flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3 h-3" /> The Result
+                      </span>
+                      <p className="text-foreground text-sm mt-1 font-medium">
+                        {project.impact}
+                      </p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-          </div>
-        )}
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects
-            .filter((p) => p.id !== "univibe")
-            .map((project) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Card className="h-full bg-zinc-900/20 border-zinc-800 hover:border-zinc-700 transition-colors group">
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <div className="p-2 bg-zinc-950 rounded border border-zinc-800 text-zinc-400 group-hover:text-white transition-colors">
-                        {project.category === "architecture" ? (
-                          <Server className="w-5 h-5" />
-                        ) : (
-                          <Layout className="w-5 h-5" />
-                        )}
-                      </div>
-                      <div className="flex gap-2">
-                        {project.links.github && (
-                          <a
-                            href={project.links.github}
-                            className="text-zinc-500 hover:text-white transition-colors"
-                          >
-                            <Github className="w-5 h-5" />
-                          </a>
-                        )}
-                        {project.links.demo && (
-                          <a
-                            href={project.links.demo}
-                            className="text-zinc-500 hover:text-white transition-colors"
-                          >
-                            <ExternalLink className="w-5 h-5" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl font-display">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-xs font-mono uppercase tracking-wider text-blue-400">
-                      {project.type}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
-                      {project.description}
-                    </p>
 
-                    {/* For Architecture Projects, show a mini visual cue */}
-                    {project.category === "architecture" && (
-                      <div className="mb-6 p-4 bg-zinc-950 rounded border border-zinc-800/50 flex flex-col gap-2">
-                        <div className="flex justify-between text-[10px] font-mono text-zinc-500 uppercase">
-                          <span>Input</span>
-                          <span>Process</span>
-                          <span>Output</span>
-                        </div>
-                        <div className="h-1 w-full bg-zinc-900 rounded-full overflow-hidden">
-                          <div className="h-full w-2/3 bg-zinc-700" />
-                        </div>
-                      </div>
-                    )}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2 py-1 bg-secondary border border-border rounded text-xs text-muted-foreground font-mono"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
 
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tech.map((t) => (
-                        <Badge
-                          key={t}
-                          variant="secondary"
-                          className="bg-zinc-800/50 text-zinc-400 hover:bg-zinc-800 border-transparent text-[10px]"
-                        >
-                          {t}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  <div>
+                    <Button
+                      variant="outline"
+                      className="border-border hover:bg-secondary"
+                      onClick={() => window.open(project.link, "_blank")}
+                    >
+                      View Live Project{" "}
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="bg-background border-l border-border min-h-[400px] flex items-center justify-center relative p-6 md:p-12">
+                  <div className="relative w-full aspect-video border border-border bg-secondary/30 rounded-lg overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                    <img
+                      src={project.images.hero}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 md:right-8 w-[120px] md:w-40 aspect-9/19 border-4 border-background bg-secondary rounded-4xl overflow-hidden shadow-2xl hidden md:block">
+                    <img
+                      src={project.images.mobile}
+                      alt={`${project.title} mobile`}
+                      className="w-full h-full object-fit"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+function ProjectDetail({ label, text }: { label: string; text: string }) {
+  return (
+    <div>
+      <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+        {label}
+      </span>
+      <p className="text-muted-foreground text-sm mt-1">{text}</p>
     </div>
   );
 }

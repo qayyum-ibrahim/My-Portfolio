@@ -10,14 +10,14 @@ From **API design to database optimization, caching, and transaction-safe system
 
 ## 💼 What I Do
 
-- 🔹 **Backend APIs & Microservices** — Node.js, Express, TypeScript
-- 🔹 **Database Design & Optimization** — MongoDB, Redis, PostgreSQL
-- 🔹 **Authentication & Security** — JWT, OAuth, RBAC, OWASP best practices
-- 🔹 **Transaction-Safe Systems** — Payouts, Ledgers, Escrow-style logic
-- 🔹 **Caching & Queues** — Redis caching, rate limiting, job queues, background workers
-- 🔹 **Frontend for Admin Dashboards** — React + TypeScript, Material UI, TailwindCSS
-- 🔹 **Integrations & Automation** — Payment gateways, webhooks, email, notifications
-- 🔹 **SEO & Slugs** — Unique, production-safe SEO-friendly URLs
+- 🔹 **Backend APIs & Microservices**, Node.js, Express, TypeScript
+- 🔹 **Database Design & Optimization**, MongoDB, Redis, PostgreSQL
+- 🔹 **Authentication & Security**, JWT, OAuth, RBAC, OWASP best practices
+- 🔹 **Transaction-Safe Systems**, Payouts, Ledgers, Escrow-style logic
+- 🔹 **Caching & Queues**, Redis caching, rate limiting, job queues, background workers
+- 🔹 **Frontend for Admin Dashboards**, React + TypeScript, Material UI, TailwindCSS
+- 🔹 **Integrations & Automation**, Payment gateways, webhooks, email, notifications
+- 🔹 **SEO & Slugs**, Unique, production-safe SEO-friendly URLs
 
 ---
 
@@ -39,15 +39,17 @@ From **API design to database optimization, caching, and transaction-safe system
 ## 🚀 Featured Projects
 
 ### Univibe - Event Ticketing Platform
-[Live Demo](https://www.univibe.ng)  
+
+[Live Demo](https://www.univibe.ng)
 
 ![Univibe Demo GIF](https://media.giphy.com/media/xT0xezQGU5xCDJuCPe/giphy.gif) <!-- Replace with real GIF of your project -->
 
 **Highlights:**
-- Scalable backend with Node.js, Express, MongoDB, Redis  
-- Admin dashboards & ticket management in React + TypeScript  
-- Secure payment and payout system with transaction safety  
-- SEO-friendly slug system and optimized API performance  
+
+- Scalable backend with Node.js, Express, MongoDB, Redis
+- Admin dashboards & ticket management in React + TypeScript
+- Secure payment and payout system with transaction safety
+- SEO-friendly slug system and optimized API performance
 
 ---
 
@@ -81,7 +83,8 @@ _More projects can be found in my [repositories](https://github.com/qayyum-ibrah
 
 - LinkedIn: [linkedin.com/in/qayyum-ibrahim](https://linkedin.com/in/qayyum-ibrahim)
 - Portfolio: [qayyum-ibrahim.vercel.app](https://qayyumibrahim.vercel.app/)
-- Email: [qayyumibrahim.01@gmail.com](mailto:qayyumibrahim.01@gmail.com)  
+- Email: [qayyumibrahim.01@gmail.com](mailto:qayyumibrahim.01@gmail.com)
+
 ---
 
 > “I don’t just write code. I design systems that scale, perform, and last.”
