@@ -74,7 +74,7 @@ Pages
 Hero Section
 
 Large headline:
-“I build scalable backend systems that power real businesses.”
+“I build scalable websites and application systems that power real businesses.”
 
 Subheadline:
 Backend-Focused Full-Stack Engineer specializing in APIs, distributed systems, caching, and transaction-safe platforms.

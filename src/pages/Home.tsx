@@ -37,7 +37,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500"
             >
-              I build scalable backend systems that power real businesses.
+              I build scalable websites and application systems that power real businesses.
             </motion.h1>
 
             <motion.p 
